@@ -261,7 +261,6 @@ hr.light-100 {
 }
 
 
-/*---Firefox Bug Fix --*/
 
 .carousel-item {
     transition: -webkit-transform 0.5s ease;
@@ -272,7 +271,7 @@ hr.light-100 {
 }
 
 
-/*--- Fixed Background Image --*/
+/*---Parallax --*/
 
 figure {
     position: relative;
@@ -305,27 +304,8 @@ figure {
     will-change: transform;
 }
 
-
-/*--- Bootstrap Padding Fix --*/
-
+/* PADDING DE TODO EL DOCUMENTO*/
 [class*="col-"] {
     padding: 2rem;
 }
 
-
-/*
-Extra small (xs) devices (portrait phones, less than 576px)
-No media query since this is the default in Bootstrap
-
-Small (sm) devices (landscape phones, 576px and up)
-@media (min-width: 576px) { ... }
-
-Medium (md) devices (tablets, 768px and up)
-@media (min-width: 768px) { ... }
-
-Large (lg) devices (desktops, 992px and up)
-@media (min-width: 992px) { ... }
-
-Extra (xl) large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) { ... }
-*/
