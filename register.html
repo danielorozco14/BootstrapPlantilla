@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="shortcut icon" href="img/icon.ico" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <link href="register.css" rel="stylesheet">
+    <title>TKCD.GAMES | Registrate</title>
+</head>
+
+<body>
+    <!--NAVEGACION-->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html"> <i class="fab fa-ethereum"></i> <span class="eslogan">TKCD.GAMES</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Team</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Connect</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--FORMULARIO DE REGISTRO-->
+    <div class="container-fluid h-100">
+        <div class="row">
+            <div class="col-md-4 col-sm-4 col-xs-12 mx-auto"></div>
+            <form>
+        <div class="form-row col-md-4 mx-auto">
+            <div class="form-group col-md-6">
+                <label for="nombre">Nombre</label>
+                <input type="text" class="form-control" id="nombre" placeholder="Nombre">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="apellido">Apellido</label>
+                <input type="text" id="apellido" class="form-control" placeholder="Apellido">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="correo">Email</label>
+                <input type="email" class="form-control" id="correo" placeholder="Email">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="pass">Password</label>
+                <input type="password" class="form-control" id="pass" placeholder="Password">
+            </div>
+
+            <fieldset class="form-group " id="radioB">
+                <div class="row">
+                    <legend class="col-form-label col-sm-2 pt-0">Sexo: </legend>
+                    <div class="col-sm-10">
+                        <div class="form-check">
+                            <input type="radio" id="radioH" name="opcionSexo" class="form-ckeck-input">
+                            <label class="form-check-label" for="radioH">Hombre</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" id="radioM" name="opcionSexo" class="form-ckeck-input" value="opcion2">
+                            <label for="radioM" class="form-check-label">Mujer</label>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+        <div class="col-md-3 mx-auto">
+            <button type="submit" class="btn btn-success btn-block" style="font-weight:500">Registrarse</button>
+        </div>
+    </form>
+        </div>
+    </div>
+    
+</body>
+
+</html>

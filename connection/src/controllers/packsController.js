@@ -6,10 +6,15 @@ packsController.saludo = function (req,res,next)
 {
     res.render('index');
 };
+packsController.login = function (req,res,next)
+{
+    res.render('login');
+};
 
 packsController.imprimir = function(req,res,next)
 {
     console.log(req.body);
 };
+
 
 module.exports = packsController;
