@@ -3,9 +3,8 @@ const router = express.Router();
 var packsController = require("../controllers/packsController");
 
 router.get('/',packsController.saludo);
+router.get('/login',packsController.login);
+router.get('/register',packsController.register);
 
-router.get('/mundo',(req, res, next)=>{
-    res.send("Hola mundo fknlkgdsklgdndglf");
-});
 
 module.exports = router;

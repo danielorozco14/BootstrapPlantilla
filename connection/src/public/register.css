@@ -1,0 +1,57 @@
+/*NAVBAR*/
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700');
+@import url("https://fonts.googleapis.com/css?family=Oswald:400,500,700");
+
+html {
+    height: 100%;
+    width: 100%;
+    font-family: "Poppins", sans-serif;
+    color: #222;
+}
+/*
+body{
+    background-image: url("img/star.jpg");
+    background-repeat: no-repeat;
+    max-width: 100%;
+    min-height: 100%;    
+}*/
+
+body::before {
+    background: url("img/blood.jpg") no-repeat center center fixed;
+    content: '';
+    z-index: -1;
+    width: 100%;
+    height: 100vh;
+    position:fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
+  }
+.eslogan {
+    font-family: 'Oswald', sans-serif;
+    position: relative;
+    font-size: 1.7em;
+    font-weight: 600;
+    color: #ffffff;
+    margin-left: 0.2rem;
+}
+.navbar {
+    padding: 0.8rem;
+}
+.fa-ethereum {
+    font-size: 2em;
+    color: rgba(245, 109, 57, 1);
+}
+.navbar-nav li {
+    padding-right: 20px;
+}
+.nav-link {
+    font-size: 1.1em !important;
+    color: #ffffff;
+}
