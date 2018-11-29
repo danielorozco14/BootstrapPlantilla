@@ -1,26 +1,18 @@
-const express = require('express');
-const router = express.Router();
-var packsController = require("../controllers/packsController");
+const express = require('express'),
+    router = express.Router();
 
-/** Modularizar controladores. */
+var indexRouter = require('./index');
+var adminsRouter = require('./admin');
+var juegosRouter = require('./juegos');
+var loginRouter = require('./login');
+var registerRouter = require('./register');
+var chatRouter = require('./message');
 
-var indexRouter = require('./routes/index');
-var adminsRouter = require('./routes/admin');
-var juegosRouter = require('./routes/juegos');
-var loginRouter = require('./routes/login');
-var registerRouter = require('./routes/register');
-var chatRouter = require('./routes/chat');
-
-router.get('/',packsController.saludo);
-router.get('/login',packsController.login);
-router.get('/register',packsController.register);
-router.get('/chat',packsController.chat);
-
-app.use('/', indexRouter);
-app.use('/admin', adminsRouter);
-app.use('/juegos', juegosRouter);
-app.use('/login', loginRouter);
-app.use('/register', registerRouter);
-app.use('/chat', chatRouter);
+router.use('/', indexRouter);
+router.use('/admin', adminsRouter);
+router.use('/juegos', juegosRouter);
+router.use('/login', loginRouter);
+router.use('/register', registerRouter);
+router.use('/chat', chatRouter);
 
 module.exports = router;
