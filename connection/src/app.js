@@ -1,5 +1,5 @@
-const express = require('express');
-const app = express();
+const express = require('express'),
+  app = express();
 
 var bodyParser = require('body-parser')
 var http = require('http').Server(app);
@@ -31,10 +31,9 @@ app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, "public")));
 
-//rutas
+//router
 app.use('/', require('./routes/routes'));
-app.use('/messages', require('./routes/message'));
-app.use('/registro', require('./routes/register'));
+
 app.listen(app.get('port'), () => {
   console.log(`Server listening on port : ${app.get('port')}`);
 });
