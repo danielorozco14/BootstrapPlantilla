@@ -40,8 +40,8 @@ const PersonaSchema = new Schema({
         required: true,
     },
 
-    fechaNacimiento: {
-        type: String,
+    edad: {
+        type: Number,
         required: true
     },
 
