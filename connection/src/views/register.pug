@@ -42,13 +42,16 @@ html(lang='en')
           .form-row.col-md-7.mx-auto
             .form-group.col-md-6
               label(for='nombre') Nombre
-              input#nombre.form-control(type='text', placeholder='Nombre')
+              input#nombre.form-control(type='text', placeholder='Karicha')
             .form-group.col-md-6
               label(for='apellido') Apellido
-              input#apellido.form-control(type='text', placeholder='Apellido')
+              input#apellido.form-control(type='text', placeholder='Jhonson')
+              form-group.col-md-6
+              label(for='username') Username
+              input#username.form-control(type='text', placeholder='salchicha22')
             .form-group.col-md-6
               label(for='correo') Email
-              input#correo.form-control(type='email', placeholder='Email')
+              input#correo.form-control(type='email', placeholder='quieropasarweb@123.com')
             .form-group.col-md-6
               label(for='pass') Password
               input#pass.form-control(type='password', placeholder='Password')
@@ -66,13 +69,12 @@ html(lang='en')
             button.btn.btn-success.btn-block(type='submit', style='font-weight:500') Registrarse
 
                script.
-                  
-                  $(() => {
-                  $("#send").click(() => {
-                  sendData({ name: $("#nombre").val(), lastname: $("#apellido").val(),
-                  email: $("#email").val(),password: $("#password").val()});
-                  })
-        
-                  function sendData(message) {
-                  $.post('http://localhost:3001/registro', message)
-                  }
+                        $(() => {
+                        $("#send").click(() => {
+                        sendData({ nombre: $("#nombre").val(), apellido: $("#apellido").val(),
+                        email: $("#email").val(),password: $("#password").val(),username: $("#username").val()});
+                        })
+              
+                        function sendData(message) {
+                        $.post('http://localhost:3001/register', message)
+                        }
