@@ -18,7 +18,7 @@ var mongoose = require('mongoose');
 
 
 
-  var dbUrl = 'mongodb://amkurian:amkurian1@ds257981.mlab.com:57981/simple-chat'
+  var dbUrl = 'mongodb://root:admin1@ds121099.mlab.com:21099/tkcdchat'
   
   
   
@@ -48,6 +48,7 @@ app.use(express.static(path.join(__dirname, "public")));
 //rutas
 app.use('/',require('./routes/routes'));
 app.use('/messages',require('./routes/message'));
+app.use('/registro',require('./routes/register'));
 app.listen(app.get('port'),()=>{
     console.log(`Server listening on port : ${app.get('port')}`);
 });

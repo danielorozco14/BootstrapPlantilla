@@ -64,3 +64,15 @@ html(lang='en')
                     label.form-check-label(for='radioM') Mujer
           .col-md-4.mx-auto
             button.btn.btn-success.btn-block(type='submit', style='font-weight:500') Registrarse
+
+               script.
+                  
+                  $(() => {
+                  $("#send").click(() => {
+                  sendData({ name: $("#nombre").val(), lastname: $("#apellido").val(),
+                  email: $("#email").val(),password: $("#password").val()});
+                  })
+        
+                  function sendData(message) {
+                  $.post('http://localhost:3001/registro', message)
+                  }
