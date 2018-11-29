@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var Message = require('../models/registro')
+var Message = require('../models/Persona')
 
 
 /* GET home page. */
