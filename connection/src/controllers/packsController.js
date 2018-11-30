@@ -16,6 +16,9 @@ packsController.register=function(req,res,next){
 packsController.chat=function(req,res,next){
     res.render('chat');
 };
+packsController.inicio=function(req,res,next){
+    res.render('inicio');
+};
 packsController.imprimir = function(req,res,next)
 {
     console.log(req.body);

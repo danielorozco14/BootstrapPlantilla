@@ -37,14 +37,14 @@ html(lang='en')
     .container-fluid.h-100
       .row
         .col-md-4.col-sm-4.col-xs-12.mx-auto
-          form.form-container(method='GET')
+          form#formLog.form-container(method='post',action='/login')
             h1.text-left Iniciar Sesión
             .form-group
               label(for='exampleInputEmail1') Email
-              input#exampleInputEmail1.form-control(type='email', aria-describedby='emailHelp', placeholder='Enter email')
+              input#email.form-control(name='mail',type='email', aria-describedby='emailHelp', placeholder='Enter email')
             .form-group
               label(for='exampleInputPassword1') Password
-              input#exampleInputPassword1.form-control(type='password', placeholder='Password')
+              input#password.form-control(name='mail',type='password', placeholder='Password')
             .form-group.form-check
               input#exampleCheck1.form-check-input(type='checkbox')
               label.form-check-label(for='exampleCheck1') Recuerdame
