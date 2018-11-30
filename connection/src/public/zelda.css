@@ -45,7 +45,7 @@ html, body {
     padding: 15%;
     background-size: cover;
     background-repeat: no-repeat;
-    background-image: url('../imagenes/zelda-hylian-e3.gif');
+    background-image: url('img/zelda-hylian-e3.gif');
 }
 
 .texto1 {
