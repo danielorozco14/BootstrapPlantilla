@@ -1,10 +1,6 @@
-const mongoose = require('mongoose');
-
-const Schema = mongoose.Schema;
-
-const MensajeSchema = new Schema({
-    autor: { type: String, required: true },
-    mensaje: { type: String, required: true },
+const mongoose =  require('mongoose');
+ let PostModel = new mongoose.Schema({
+    name : String,
+    message : String
 });
-
-module.exports = mongoose.model('messages', MensajeSchema);
+ module.exports = mongoose.model('messages', PostModel); 

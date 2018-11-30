@@ -1,9 +1,8 @@
 var express = require('express');
 var router = express.Router();
-var Message = require('../models/Mensaje')
-
-
-/* GET home page. */
+var Message = require('../models/mensaje')
+var app = require('../app')
+ /* GET home page. */
 router.get('/', (req, res) => {
     Message.find({},(err, messages)=> {
       res.send(messages);
@@ -42,4 +41,4 @@ router.get('/', (req, res) => {
     }
   
   })
-module.exports = router;
+module.exports = router; 
