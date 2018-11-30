@@ -1,10 +1,15 @@
-var express = require('express'), singleUserRouter = require('./user');
-var router = express.Router();
+var express = require('express'),
+  singleUserRouter = require('./user'),
+  router = express.Router(),
+  userController = require('../controllers/user');
 
-/* GET users listing. */
-router.get('/', function (req, res, next) { /**Solo disponible desde módulo de admin: para ver todos los usuarios */
-  res.render('profile', { title: 'All accounts' });
-});
+/* GET users listing.
+  Solo disponible desde módulo de admin: para ver todos los usuarios.
+*/
+router.get('/', userController.getAll);
+
+/** Create a new user */
+router.post('/', userController.create);
 
 // importado
 router.get('/:id', singleUserRouter);

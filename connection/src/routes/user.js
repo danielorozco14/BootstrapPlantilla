@@ -1,17 +1,25 @@
-var express = require('express'), postsRouter = require('./post'), gamesRouter = require('./juegos'), AlbumsRouter = require('./album');
-var router = express.Router();
+var express = require('express'),
+  postsRouter = require('./post'),
+  gamesRouter = require('./juegos'),
+  AlbumsRouter = require('./album'),
+  router = express.Router(),
+  userController = require('../controllers/user');
 
 /* GET user. */
-router.get('/', function (req, res, next) { /**Solo disponible desde módulo de admin: para ver todos los usuarios */
-  res.render('profile', { title: 'Single User' });
-});
+router.get('/', userController.getOne);
+
+/** Update a user's properties */
+router.patch('/:id', userController.update);
+
+/** Delete a user by its ID */
+router.delete('/:id', userController.delete);
 
 router.get('/friends', function (req, res, next) {
-  res.render('profile', { title: 'Users/this-user/friends' });
+  // show all users in array of friends
 });
 
 router.get('/info', function (req, res, next) {
-  res.render('profile', { title: 'Users/this-user/info' });
+  // show all personal info
 });
 
 router.use('/post', postsRouter);
