@@ -20,6 +20,7 @@ router.get('/', (req, res) => {
   
   router.post('/', async (req, res) => {
     try{
+      
       var message = new Message(req.body);
   
       var savedMessage = await message.save()
