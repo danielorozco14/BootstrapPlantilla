@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
-var Message = require('../models/mensaje')
-var app = require('../app')
+var Message = require('../models/Mensaje')
+
  /* GET home page. */
 router.get('/', (req, res) => {
     Message.find({},(err, messages)=> {

@@ -13,6 +13,7 @@ html(lang='en')
     script(src='https://use.fontawesome.com/releases/v5.0.8/js/all.js')
     script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js')
     script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js')
+    script(src='/javasrcipt/registroScript.js')
     link(href='register.css', rel='stylesheet')
     title TKCD.GAMES | Registrate
   body
@@ -47,6 +48,9 @@ html(lang='en')
               label(for='apellido') Apellido
               input#apellido.form-control(type='text', placeholder='Jhonson')
               form-group.col-md-6
+               label(for='edad') Edad
+              input#edad.form-control(type='number', placeholder='20')
+              form-group.col-md-6
               label(for='username') Username
               input#username.form-control(type='text', placeholder='salchicha22')
             .form-group.col-md-6
@@ -66,7 +70,7 @@ html(lang='en')
                     input#radioM.form-ckeck-input(type='radio', name='opcionSexo', value='opcion2')
                     label.form-check-label(for='radioM') Mujer
           .col-md-4.mx-auto
-            button.btn.btn-success.btn-block(type='submit', style='font-weight:500') Registrarse
+            button#send.btn.btn-success.btn-block(type='submit', style='font-weight:500') Registrarse
 
                script.
                         $(() => {
@@ -74,7 +78,7 @@ html(lang='en')
                         sendData({ nombre: $("#nombre").val(), apellido: $("#apellido").val(),
                         email: $("#email").val(),password: $("#password").val(),username: $("#username").val()});
                         })
-              
+                        })
                         function sendData(message) {
-                        $.post('http://localhost:3001/register', message)
+                        $.post('http://localhost:3001/registro', message)
                         }
