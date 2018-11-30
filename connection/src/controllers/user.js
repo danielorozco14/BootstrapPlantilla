@@ -1,66 +1,8 @@
-var mongoose = require('mongoose'), userModel = require('../models/Persona'), controller = {};
+var mongoose = require('mongoose'),
+    userModel = require('../models/Persona'),
+    userController = {};
 
-controller.getAll = function (req, res) {
-    userModel.find({}, function (err, users) {
-        if (err) {
-            res.status(500);
-            res.json({
-                ok: false,
-                err
-            });
-        } else {
-            res.json({
-                ok: true,
-                users
-            });
-        }
-    });
-};
-
-controller.getOne = function (req, res) {
-    userModel.findOne({
-        _id: req.params.id
-    }, function (err, user) {
-        if (err) {
-            res.status(500);
-            res.json({
-                ok: false,
-                err
-            });
-        } else {
-            res.json({
-                ok: true,
-                user
-            });
-        }
-    });
-};
-
-controller.update = function (req, res) {
-    // Validar si existen los atributos
-    let update = {
-        username: req.body.username,
-        nombre: req.body.nombre,
-        apellido: req.body.apellido
-    };
-    userModel.findByIdAndUpdate(req.params.id, update, function (err, old) {
-        if (err) {
-            res.status(500);
-            res.json({
-                ok: false,
-                err
-            })
-        } else {
-            res.json({
-                ok: true,
-                old,
-                update
-            });
-        }
-    });
-};
-
-controller.insert = function (req, res) {
+userController.create = function (req, res) {
     let userNew = new userModel({
         nombre: req.body.nombre,
         apellido: req.body.apellido,
@@ -83,7 +25,66 @@ controller.insert = function (req, res) {
     });
 };
 
-controller.delete = function (req, res) {
+userController.getAll = function (req, res) {
+    userModel.find({}, function (err, users) {
+        if (err) {
+            res.status(500);
+            res.json({
+                ok: false,
+                err
+            });
+        } else {
+            res.json({
+                ok: true,
+                users
+            });
+        }
+    });
+};
+
+userController.getOne = function (req, res) {
+    userModel.findOne({
+        _id: req.params.id
+    }, function (err, user) {
+        if (err) {
+            res.status(500);
+            res.json({
+                ok: false,
+                err
+            });
+        } else {
+            res.json({
+                ok: true,
+                user
+            });
+        }
+    });
+};
+
+userController.update = function (req, res) {
+    let update = {
+        username: req.body.username,
+        nombre: req.body.nombre,
+        apellido: req.body.apellido
+    };
+    userModel.findByIdAndUpdate(req.params.id, update, function (err, old) {
+        if (err) {
+            res.status(500);
+            res.json({
+                ok: false,
+                err
+            })
+        } else {
+            res.json({
+                ok: true,
+                old,
+                update
+            });
+        }
+    });
+};
+
+userController.delete = function (req, res) {
     userModel.findByIdAndRemove(req.params.id, function (err, eliminado) {
         if (err) {
             res.status(500);
@@ -100,4 +101,4 @@ controller.delete = function (req, res) {
     });
 }
 
-module.exports = controller;
+module.exports = userController;
