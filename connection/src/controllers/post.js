@@ -7,15 +7,15 @@ PostController.create = function (req, res) {
         nombre: req.body.nombre,
         autor: req.body.autor
     };
-    
+
     if (data.nombre && data.autor && data.nombre != '' && data.autor != '') {
         let nuevoPost = new postModel(data);
-        nuevoPost.save(function (err, guardado) {
+        nuevoPost.save(function (err, saved) {
             if (err) {
                 res.status(500);
                 res.json({ code: 500, err });
             } else {
-                res.json({ ok: true, message: 'Guardado con éxito', guardado });
+                res.json({ ok: true, message: 'Guardado con éxito', saved });
             }
         });
 
@@ -36,7 +36,7 @@ PostController.getAll = function (req, res) {
     });
 };
 
-PostController.get = function (req, res) {
+PostController.getOne = function (req, res) {
     postModel.findOne({ _id: req.params.id }, function (err, post) {
         if (err) {
             res.status(500);
