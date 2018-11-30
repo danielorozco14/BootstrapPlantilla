@@ -1,0 +1,82 @@
+doctype html
+html(lang='es')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
+    link(rel='shortcut icon', href='/images/icon.ico')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js')
+    script(src='https://use.fontawesome.com/releases/v5.0.8/js/all.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js')
+    link(href='/zelda.css', rel='stylesheet')
+    title TKCD.GAMES | Zelda™: Breath of the Wild
+  body
+    // BARRA DE NAVEGACION
+    nav.navbar.navbar-expand-md.navbar-dark.bg-light.sticky-top
+      .container-fluid
+        a.navbar-brand(href='/')
+          i.fab.fa-ethereum
+          span.eslogan TKCD.GAMES
+        button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarResponsive')
+          span.navbar-toggler-icon
+        #navbarResponsive.collapse.navbar-collapse
+          ul.navbar-nav.ml-auto
+            li.nav-item
+              a.nav-link(href='/') Home
+            li.nav-item
+              a.nav-link(href='#') Connect
+    section.seccionBlanca
+      div
+        h2.zelda
+          | The Legen Of Zelda
+          br
+          span.zeldaSpan  Breath Of The Wild
+        p.texto1
+          | Breath of the Wild is an action adventure game set in an open world environment where players
+          | are tasked with exploring the kingdom of Hyrule while controlling Link. In terms of structure,
+          | Breath of the Wild encourages nonlinear gameplay, which is illustrated by the game's lack of defined
+          | entrances or exits to areas,scant instruction given to the player, and encouragement to explore freely.
+          | Breath of the Wild introduces a consistent physics engine to the Zelda series, letting players approach
+          | problems in different ways rather than trying to find a single solution.The game also integrates a "chemistry engine"
+          | that defines the physical properties of most objects and governs how they interact with the player and one another.
+          | For example, players may take advantage of the game's dynamic weather by throwing metal objects at enemies during
+          | thunderstorms to attract a lightning strike. However, the level of realism offered in the "chemistry engine" also means
+          | that players will equally attract an unavoidable fatal lightning strike if wearing any metal during thunderstorms.
+          | These design approaches result in a generally unstructured and interactive world that rewards experimentation and allows for
+          | nonlinear completion of the story.
+      .imgBlanca
+        img(src='../imagenes/the-legend-of-zelda_breath-of-the-wild-.jpg', alt='hojas rojas')
+    // - Footer
+    footer
+      .container-fluid.padding
+        .row.text-center
+          .col-md-4
+            i.fab.fa-ethereum
+            span.eslogan TKCD.GAMES
+            // - AQUI
+            hr.light
+            p 12345-6789-1011
+            p bestogroup@gmail.com
+            p Boulevard de los Proceres
+            p Antiguo Cuscatlan, La Libertad, El Salvador
+          .col-md-4
+            hr.light
+            h5 About Us
+            hr.light
+            p
+            p Somos amante The Legend Of Zelda Of The Wild
+            p
+          .col-md-4
+            hr.light
+            h5 Privacy Terms
+            hr.light
+            p Nos guardamos los derechos de autoria
+            p
+            p
+          .col-12
+            hr.light-100
+            h5 ©2018 TKCD.GAMES, All rights reserved.
