@@ -2,7 +2,7 @@ const mongoose = require('mongoose'), Persona = require('./persona');
 const Schema = mongoose.Schema;
 
 const ComentarioSchema = new Schema({
-    autor: { type: String, required: true },
+    autor: { type: mongoose.Schema.Types.Persona, required: true },
     contenido: { type: String, required: true },
 });
 
