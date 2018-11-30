@@ -1,11 +1,11 @@
 const mongoose = require('mongoose'),
-    postModel = require('../models/registrados');
+    postModel = require('../models/Persona');
 
 const PostController = {};
 
 PostController.create = function (req, res) {
     let data = {
-        nombre: req.body.name,
+        nombre: req.body.nombre,
         apellido: req.body.apellido,
         email: req.body.email,
         password: req.body.password,
@@ -21,12 +21,13 @@ PostController.create = function (req, res) {
                     res.json({code:500, err});
                 } else {
                     res.json({ok: true, message: 'Se a guardado con exito', guardado});
-                  
+                    res.render('login');
                 }
+                res.render('login');
             });
         
         
-     
+            res.render('login');
      
        
      

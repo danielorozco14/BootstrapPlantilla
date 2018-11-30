@@ -42,7 +42,7 @@ const PersonaSchema = new Schema({
 
     edad: {
         type: Number,
-        required: true
+        required: false
     },
 
     amigos: {
