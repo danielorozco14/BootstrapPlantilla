@@ -35,6 +35,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use('/', require('./routes/routes'));
 app.use('/messages', require('./routes/message'));
 app.use('/registro', require('./routes/register'));
+app.use('/users', require('./routes/users'));
 app.listen(app.get('port'), () => {
   console.log(`Server listening on port : ${app.get('port')}`);
 });

@@ -2,8 +2,8 @@ const mongoose = require('mongoose'), Persona = require('./persona');
 const Schema = mongoose.Schema;
 
 const SolicitudSchema = new Schema({
-    remitente: { type: mongoose.Schema.Types.Persona, required: true },
-    receptor: { type: mongoose.Schema.Types.Persona, required: true },
+    remitente: { type: String, required: true },
+    receptor: { type: String, required: true },
     estado: { type: Boolean, required: true }
 });
 

@@ -1,5 +1,5 @@
 var express = require('express'),
-  postsRouter = require('./post'),
+//  postsRouter = require('./post'),
   gamesRouter = require('./juegos'),
   AlbumsRouter = require('./album'),
   router = express.Router(),
@@ -22,7 +22,7 @@ router.get('/info', function (req, res, next) {
   // show all personal info
 });
 
-router.use('/post', postsRouter);
+//router.use('/post', postsRouter);
 
 router.use('/albums', AlbumsRouter);
 

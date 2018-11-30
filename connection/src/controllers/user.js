@@ -1,11 +1,13 @@
 var mongoose = require('mongoose'),
-    userModel = require('../models/Persona'),
+    userModel = require('../models/registrados'),
     userController = {};
 
 userController.create = function (req, res) {
     let userNew = new userModel({
         nombre: req.body.nombre,
         apellido: req.body.apellido,
+        email: req.body.email,
+        password: req.body.password,
         username: req.body.username
     });
 

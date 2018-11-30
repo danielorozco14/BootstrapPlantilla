@@ -1,45 +1,17 @@
-var express = require('express');
-var router = express.Router();
-var Message = require('../models/registrados')
+var express = require('express'),
+    router = express.Router(),
+    PostController = require('../controllers/controlregistro');
 
+// Create
+router.post('/',PostController.create);
 
-/* GET home page. */
-router.get('/', (req, res) => {
-    Message.find({},(err, messages)=> {
-      res.send(messages);
-    })
-  })
-  
-  
-  router.get('/:user', (req,res) => {
-    var user = req.params.user
-    Message.find({name: user},(err, messages)=> {
-      res.send(messages);
-    })
-  })
-  
-  
-  router.post('/', async (req, res) => {
-    try{
-      var message = new Message(req.body);
-  
-      var savedMessage = await message.save()
-        console.log('---- SAVED ----');
-  
-      var censored = await Message.findOne({message:'badword'});
-        if(censored)
-          await Message.remove({_id: censored.id})
-        else
-          io.emit('---- MENSAJE:', req.body);
-        res.sendStatus(200);
-    }
-    catch (error){
-      res.sendStatus(500);
-      return console.log('---- ERROR',error);
-    }
-    finally{
-      console.log('---- MENSAJE POSTEADO ----')
-    }
-  
-  })
-module.exports = router;
+// Read
+router.get('/',PostController.getAll);
+router.get('/:id', PostController.get);
+
+// Update
+router.put('/:id',PostController.update);
+
+// Delete
+router.delete('/:id',PostController.delete);
+module.exports = router; 

@@ -1,9 +1,9 @@
-const mongoose = require('mongoose'), Persona = require('./persona');
+const mongoose = require('mongoose'), Persona = require('./Persona');
 
 const Schema = mongoose.Schema;
 
 const AlbumSchema = new Schema({
-    autor: { type: mongoose.Schema.Types.Persona, required: true },
+    autor: { type: String, required: true },
     fechaPublicacion: { type: String, required: true },
     textoDescriptivo: { type: String, required: true },
     fotosAdjuntas: { type: [], required: false }, // arreglo de Fotografia

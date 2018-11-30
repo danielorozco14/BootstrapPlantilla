@@ -13,7 +13,7 @@ html(lang='en')
     script(src='https://use.fontawesome.com/releases/v5.0.8/js/all.js')
     script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js')
     script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js')
-    script(src='/javasrcipt/registroScript.js')
+ 
     link(href='register.css', rel='stylesheet')
     title TKCD.GAMES | Registrate
   body
@@ -39,26 +39,26 @@ html(lang='en')
     .container-fluid.h-100
       .row
         .col-md-4.col-sm-4.col-xs-12.mx-auto
-        form.form-container.mx-auto(method='GET')
+        form.form-container.mx-auto(method='POST',id='formRegistrar',action='/registro')
           .form-row.col-md-7.mx-auto
             .form-group.col-md-6
               label(for='nombre') Nombre
-              input#nombre.form-control(type='text', placeholder='Karicha')
+              input#nombre.form-control(name='nombre',type='text', placeholder='Karicha')
             .form-group.col-md-6
               label(for='apellido') Apellido
-              input#apellido.form-control(type='text', placeholder='Jhonson')
+              input#apellido.form-control(name='apellido',type='text', placeholder='Jhonson')
               form-group.col-md-6
-               label(for='edad') Edad
-              input#edad.form-control(type='number', placeholder='20')
+                label(for='edad') Edad
+              input#edad.form-control(name='edad',type='number', placeholder='20')
               form-group.col-md-6
               label(for='username') Username
-              input#username.form-control(type='text', placeholder='salchicha22')
+              input#username.form-control(name='user',type='text', placeholder='salchicha22')
             .form-group.col-md-6
               label(for='correo') Email
-              input#correo.form-control(type='email', placeholder='quieropasarweb@123.com')
+              input#correo.form-control(name='email',type='email', placeholder='quieropasarweb@123.com')
             .form-group.col-md-6
               label(for='pass') Password
-              input#pass.form-control(type='password', placeholder='Password')
+              input#pass.form-control(name='password',type='password', placeholder='Password')
             fieldset#radioB.form-group
               .row
                 legend.col-form-label.col-sm-2.pt-0 Sexo: 
@@ -70,15 +70,5 @@ html(lang='en')
                     input#radioM.form-ckeck-input(type='radio', name='opcionSexo', value='opcion2')
                     label.form-check-label(for='radioM') Mujer
           .col-md-4.mx-auto
-            button#send.btn.btn-success.btn-block(type='submit', style='font-weight:500') Registrarse
-
-               script.
-                        $(() => {
-                        $("#send").click(() => {
-                        sendData({ nombre: $("#nombre").val(), apellido: $("#apellido").val(),
-                        email: $("#correo").val(),password: $("#pass").val(),username: $("#username").val()});
-                        })
-                        })
-                        function sendData(message) {
-                        $.post('http://localhost:3001/registro', message)
-                        }
+            input.btn.btn-primary(type='submit',value='Submit')
+    
